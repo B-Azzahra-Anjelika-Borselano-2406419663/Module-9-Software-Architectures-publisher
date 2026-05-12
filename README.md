@@ -9,4 +9,4 @@ Since both the publisher and subscriber use the same URL amqp://guest:guest@loca
 This is the core idea of the message broker pattern: the publisher and subscriber do not talk to each other directly. Instead, both go through the same broker (RabbitMQ). The publisher pushes messages into the queue, and the subscriber consumes messages from that same queue. As long as both use the same URL, they will be properly connected through the broker.
 
 ### RabbitMQ screen
-![Running RabbitMQ](<screenshots/Running_rabbitmq.png>)
+![Running RabbitMQ](screenshots/Running_rabbitmq.png)
