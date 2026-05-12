@@ -14,3 +14,7 @@ This is the core idea of the message broker pattern: the publisher and subscribe
 ### Sending and processing event
 ![Sending and processing event](screenshots/Sending_and_processing_event.png)
 When the publisher is run, it sends 5 UserCreatedEventMessage events to the RabbitMQ message broker via the user_created queue. The subscriber, which is continuously listening to that queue, receives and processes each event as it arrives, printing the message contents to the console. This demonstrates the event-driven communication pattern where the publisher and subscriber are decoupled — they do not interact directly, but instead communicate through the message broker.
+
+### Monitoring chart based on publisher
+![Monitoring chart based on publisher](screenshots/Monitoring_chart_based_on_publisher.png)
+The spikes visible in the RabbitMQ message rates chart correspond to the moments when the publisher is run. Each time the publisher is executed, it sends 5 messages at once to the message broker, causing a sudden surge in the message rate which appears as a spike on the chart. Once all 5 messages have been sent and consumed by the subscriber, the rate drops back to zero until the publisher is run again.
