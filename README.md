@@ -10,3 +10,7 @@ This is the core idea of the message broker pattern: the publisher and subscribe
 
 ### RabbitMQ screen
 ![Running RabbitMQ](screenshots/Running_rabbitmq.png)
+
+### Sending and processing event
+![Sending and processing event](screenshots/Sending_and_processing_event.png)
+When the publisher is run, it sends 5 UserCreatedEventMessage events to the RabbitMQ message broker via the user_created queue. The subscriber, which is continuously listening to that queue, receives and processes each event as it arrives, printing the message contents to the console. This demonstrates the event-driven communication pattern where the publisher and subscriber are decoupled — they do not interact directly, but instead communicate through the message broker.
